@@ -1,7 +1,7 @@
 # Welcome to streamlit
 Hi I'm Laurence From BSCS-3B
 
-Link: https://magistrado-cs3b.streamlit.app/
+[My Published App](https://magistrado-cs3b.streamlit.app/)
 
 This is the app you get when you run `streamlit hello`, extracted as its own app.
 
