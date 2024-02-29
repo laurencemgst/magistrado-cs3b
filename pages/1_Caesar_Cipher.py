@@ -14,7 +14,7 @@ def encrypt_decrypt(text, shift_keys, ifdecrypt):
 
 if __name__ == "__main__":
     # Example usage
-    text = st.text_area("")
+    text = st.text_area("", key=143)
     shift_keys = list(map(int, st.text_area("").split()))
 
     if st.button("Encrypt"):
