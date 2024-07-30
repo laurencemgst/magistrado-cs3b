@@ -2,11 +2,19 @@ import streamlit as st
 from PIL import Image
 import zipfile
 import os
+import pyheif
+import io
 
 def convert_heic_to_png_or_jpg(heic_file, format='PNG'):
-    # Open HEIC file
-    img = Image.open(heic_file)
-    # Convert to PNG or JPG
+    heif_file = pyheif.read(heic_file)
+    img = Image.frombytes(
+        heif_file.mode, 
+        heif_file.size, 
+        heif_file.data,
+        "raw",
+        heif_file.mode,
+        heif_file.stride,
+    )
     img_converted = img.convert(format)
     return img_converted
 
@@ -53,3 +61,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+        
